@@ -1,0 +1,65 @@
+
+.container {
+    width: 400px; /* Adjust the width as needed */
+    height: 300px; /* Adjust the height as needed */
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.container h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: 100%;
+    margin-top: 20px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: width 0.5s ease-in-out, padding 0.5s ease-in;
+}
+
+input[type= "text"]:hover{
+    width: 102%;
+    padding: 10px;
+
+}
+
+
+button {
+    
+    padding: 10px 20px;
+    font-size: 16px;
+    background: linear-gradient(to right, #007bff 0%, #007bff 50%, #23b5ef7e 50%, #15d4f188 100%);
+    background-size: 200% 100%;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: color 0.5s ease-out ,  background-position 0.5s ease ;
+}
+
+button:hover {
+    background-position: -100% 0;
+    color: black;
+    
+    
+}

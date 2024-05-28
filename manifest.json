@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Profile Picture Modifier",
+    "version": "0.0.1",
+    "description": "Simple Chrome extension to modify LinkedIn Profile Picture",
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+
+   
+
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "DARTH.png",
+            "24": "DARTH.png",
+            "32": "DARTH.png",
+            "64": "DARTH.png",
+            "128": "DARTH.png"
+
+        }
+         },
+    "content_scripts": [
+        {
+            "matches": ["*://www.linkedin.com/*"],
+            "js": ["contentScript.js"]
+        }
+    ]
+}
