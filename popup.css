@@ -1,7 +1,7 @@
 
 .container {
-    width: 400px; /* Adjust the width as needed */
-    height: 300px; /* Adjust the height as needed */
+    width: 400px; 
+    height: 300px; 
     padding: 20px;
     box-sizing: border-box;
     font-family: Arial, sans-serif;

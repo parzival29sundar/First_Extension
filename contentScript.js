@@ -1,16 +1,17 @@
-// This script will be injected into the LinkedIn homepage
+
 console.log('Content script loaded');
 
 // Function to replace profile pictures
 function replaceProfilePictures(imageUrl) {
     console.log('Replacing profile pictures with:', imageUrl);
-    // Select all profile picture elements in posts
+
+    // All the profile pictures will be selected with this
     const profilePictures = document.querySelectorAll('.feed-shared-actor__container img, .update-components-actor__container img, .ivm-image-view-model__avatar-img');
 
-    // Log the number of profile pictures selected
+    // This will tell us the number of all the profile pictures that got selected and which has to be replaced
     console.log('Number of profile pictures found:', profilePictures.length);
 
-    // Replace each profile picture with the specified image
+    // Replacing with an image URL
     profilePictures.forEach(picture => {
         // Log the current image src
         console.log('Old Image URL:', picture.src);
@@ -21,16 +22,16 @@ function replaceProfilePictures(imageUrl) {
         picture.setAttribute('width', picture.getAttribute('width'));
         picture.setAttribute('height', picture.getAttribute('height'));
 
-        // Log the new image src to verify the change
+        
         console.log('New Image URL Set:', picture.src);
     });
 }
 
-// Function to handle scroll events and replace profile pictures dynamically
+// To replace more profile picture which comes after scrolling down
 function handleScroll(imageUrl) {
-    // Replace profile pictures when the page is scrolled
+   
     window.addEventListener('scroll', function() {
-        // Call replaceProfilePictures() whenever the user scrolls
+       
         replaceProfilePictures(imageUrl);
     });
 }
@@ -39,7 +40,7 @@ function handleScroll(imageUrl) {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "replaceProfilePictures") {
         replaceProfilePictures(request.url);
-        // Handle scroll events to dynamically replace profile pictures
+        
         handleScroll(request.url);
     }
 });
