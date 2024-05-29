@@ -42,5 +42,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         replaceProfilePictures(request.url);
         
         handleScroll(request.url);
+        sendResponse({status: 'success'});
     }
 });
